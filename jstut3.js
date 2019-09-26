@@ -37,3 +37,17 @@ function drawChart(){
     // draw all pie pieces of the chart
     drawPie();
 }
+
+// function to populate the array with json data
+function populateArray(jsonData){
+    // read the json data into expense array using the parse method of JSON object
+    let expenseArray = JSON.parse(jsonData);
+    // loop through the expense array to put the data inside the expenditureArray
+    // loop it through the lenght of expenditures array from json
+    for(i = 0; i < expenseArray.expenditures.lenght; i++){
+        // use the additional variable to take a single data from json data array
+        let expense = expenseArray.expenditure[i];
+        // put the data in new expenditure array
+        expendituresArray[i] = expense;
+    }
+}
