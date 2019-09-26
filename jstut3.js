@@ -73,5 +73,6 @@ function createRandomColorArray(){
         randColArr[i] = '#' + Math.floor(Math.random() * 16777215).toString(16);
         // floor - for rounding up to integer, random - for generating random number between 1 and 1, toString - to change the result of math operation to string and with parameter "16" it will change to 16-based value (color)
     }
+    return randColArr;
     // TODO: consider adding pallete of colors (like ENDESGA32) and looping/randommizing the colors from that pallet as colors for pie pieces of the chart
 }
