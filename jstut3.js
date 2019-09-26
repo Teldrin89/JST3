@@ -51,3 +51,14 @@ function populateArray(jsonData){
         expendituresArray[i] = expense;
     }
 }
+
+// function to operate on percentage values from input array
+function createPercentArray(){
+    // create a new array for adjusted % - the sum has to be 2 (instead of 100)
+    let perArr = [];
+    // loop through all of the % values, ajust and store in array
+    for(i=0; i < expendituresArray.length; i++){
+        perArr[i] = expendituresArray[i] * .02;
+    }
+    return perArr;
+}
