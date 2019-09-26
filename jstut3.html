@@ -18,7 +18,20 @@
     <script src="jstut3.js"></script>
   </head>
   <body>
+    <!-- start by wrapping everything in container -->
+    <div id="container">
+      <!-- add jumbotron within container for additional editing options -->
+      <div id="jumbotron">
+        <!-- create canvas with set dimensions for pie chart -->
+        <canvas id="canvas" width="600" height="600">
 
+        </canvas><br> <!-- add some break area -->
+        <!-- create text area for chart input data -->
+        <textarea id="json-data"></textarea><br>
+        <!-- add a button that will run a JS function to create a chart in the canvas defeined above based on data in text area  -->
+        <button type="submit" class="btn-lg mybut" onclick="drawChart()">Create Pie Chart</button>
+      </div>
+    </div>
     <!-- import additional libraries for the bootstrap stylesheet-->
     <!-- import jquery and popper.js plugins-->
     <script
