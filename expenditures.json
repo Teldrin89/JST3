@@ -1,0 +1,9 @@
+{"expenditures":[
+    {"type":"Housing", "percent":"34"},
+    {"type":"Other", "percent":"16"},
+    {"type":"Food", "percent":"13"},
+    {"type":"Transportation", "percent":"16"},
+    {"type":"Healthcare", "percent":"6"},
+    {"type":"Insurance/Pension", "percent":"11"},
+    {"type":"Apparel/Services", "percent":"4"}
+]}
