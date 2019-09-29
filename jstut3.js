@@ -44,9 +44,9 @@ function populateArray(jsonData){
     let expenseArray = JSON.parse(jsonData);
     // loop through the expense array to put the data inside the expenditureArray
     // loop it through the lenght of expenditures array from json
-    for(i = 0; i < expenseArray.expenditures.lenght; i++){
+    for(i = 0; i < expenseArray.expenditures.length; i++){
         // use the additional variable to take a single data from json data array
-        let expense = expenseArray.expenditure[i];
+        let expense = expenseArray.expenditures[i];
         // put the data in new expenditure array
         expendituresArray[i] = expense;
     }
@@ -58,7 +58,7 @@ function createPercentArray(){
     let perArr = [];
     // loop through all of the % values, ajust and store in array
     for(i=0; i < expendituresArray.length; i++){
-        perArr[i] = expendituresArray[i] * .02;
+        perArr[i] = expendituresArray[i].percent * .02;
     }
     return perArr;
 }
@@ -100,7 +100,7 @@ function drawPie(){
 // function to draw a single slice of pie chart
 function drawSlice(ctx, sliceCenterX, sliceCenterY, radius, startAngle, endAngle, color){
     // define fill color setup for context
-    ctx.fillstyle = color;
+    ctx.fillStyle = color;
     // start drawing
     ctx.beginPath();
     // draw from the starting point
