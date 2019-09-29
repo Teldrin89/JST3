@@ -77,7 +77,7 @@ function createRandomColorArray(){
     // TODO: consider adding pallete of colors (like ENDESGA32) and looping/randommizing the colors from that pallet as colors for pie pieces of the chart
 }
 
-// function to draw a single pie part of the chart
+// function to draw a pie chart in canvas
 function drawPie(){
     // get a canvas refrence
     var canvas = document.getElementById('canvas');
@@ -92,8 +92,23 @@ function drawPie(){
         startAngle = endAngle;
         // new end angle is calculated using the percentage of the precent array that is already adjusted to take the correct piece of circular pie chart
         endAngle = endAngle + (percentArray[i] * Math.PI);
-        // separate function called to draw single slice
+        // separate function called to draw single slice - with the canvas 2d context as input, setting the size of the chart with x and y points for the circle of the chart - 300 and 200, the radius of the chart - 150, passing the start and end angles as well as the color from the color array
         drawSlice(context, 300, 200, 150, startAngle, endAngle, colorArray[i])
-
     }
+}
+
+// function to draw a single slice of pie chart
+function drawSlice(ctx, sliceCenterX, sliceCenterY, radius, startAngle, endAngle, color){
+    // define fill color setup for context
+    ctx.fillstyle = color;
+    // start drawing
+    ctx.beginPath();
+    // draw from the starting point
+    ctx.moveTo(sliceCenterX, sliceCenterY);
+    // draw an arc
+    ctx.arc(sliceCenterX, sliceCenterY, radius, startAngle, endAngle);
+    // close the slice
+    ctx.closePath();
+    // fill the shape drawn
+    ctx.fill();
 }
